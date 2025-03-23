@@ -4,7 +4,11 @@
       { "src": "app.py", "use": "@vercel/python" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "index.py" }
-    ]
+      { "src": "/(.*)", "dest": "app.py" }
+    ],
+    "build": {
+      "command": "pip install -r requirements.txt"
+    },
+    "start": "gunicorn app:app"
   }
   
